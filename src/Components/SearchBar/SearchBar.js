@@ -11,7 +11,7 @@ export default class SearchBar extends Component {
   renderSortByOptions() {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}></li>;
+      return <li key={sortByOptionValue}>{sortByOption}</li>;
     });
   }
 
@@ -19,7 +19,7 @@ export default class SearchBar extends Component {
     return (
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
-          <ul>{this.renderSortByOptions}</ul>
+          <ul>{this.renderSortByOptions()}</ul>
         </div>
         <div className="SearchBar-fields">
           <input placeholder="Search Businesses" />
