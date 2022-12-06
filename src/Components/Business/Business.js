@@ -3,6 +3,7 @@ import "./Business.css";
 
 export default class Business extends Component {
   render() {
+    const { business } = this.props;
     return (
       <div className="Business">
         <div className="image-container">
@@ -11,7 +12,7 @@ export default class Business extends Component {
             alt=""
           />
         </div>
-        <h2>{business.name}</h2>
+        <h2>{this.props.business.name}</h2>
         <div className="Business-information">
           <div className="Business-address">
             <p>{business.address}</p>
@@ -30,15 +31,3 @@ export default class Business extends Component {
     );
   }
 }
-
-var business = {
-  imageSrc: "https://content.codecademy.com/programs/react/ravenous/pizza.jpg",
-  name: "MarginOtto Pizzeria",
-  address: "1010 Paddington Way",
-  city: "Flavortown",
-  state: "NY",
-  zipCode: "10101",
-  category: "Italian",
-  rating: 4.5,
-  reviewCount: 90,
-};
